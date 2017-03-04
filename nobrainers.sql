@@ -235,19 +235,19 @@ INSERT INTO `iscontained` (`RecipeName`, `CustomerID`, `ProductID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `isincluedproduct`
+-- Table structure for table `isincludedproduct`
 --
 
-CREATE TABLE `isincluedproduct` (
+CREATE TABLE `isincludedproduct` (
   `OrderID` int(5) NOT NULL,
   `ProductID` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `isincluedproduct`
+-- Dumping data for table `isincludedproduct`
 --
 
-INSERT INTO `isincluedproduct` (`OrderID`, `ProductID`) VALUES
+INSERT INTO `isincludedproduct` (`OrderID`, `ProductID`) VALUES
 (11052, 8),
 (11052, 25),
 (11052, 30),
@@ -302,20 +302,20 @@ INSERT INTO `isincluedproduct` (`OrderID`, `ProductID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `isincluedrecipe`
+-- Table structure for table `isincludedrecipe`
 --
 
-CREATE TABLE `isincluedrecipe` (
+CREATE TABLE `isincludedrecipe` (
   `RecipeName` varchar(40) NOT NULL,
   `CustomerID` int(1) NOT NULL,
   `OrderId` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `isincluedrecipe`
+-- Dumping data for table `isincludedrecipe`
 --
 
-INSERT INTO `isincluedrecipe` (`RecipeName`, `CustomerID`, `OrderId`) VALUES
+INSERT INTO `isincludedrecipe` (`RecipeName`, `CustomerID`, `OrderId`) VALUES
 ('Alaskan Cod and Shrimp with Fresh Tomato', 1, 73409),
 ('Cajun Chicken Ragout', 9, 67034),
 ('Fettuccini Carbonara', 7, 71119),
@@ -509,15 +509,15 @@ ALTER TABLE `iscontained`
   ADD PRIMARY KEY (`RecipeName`,`CustomerID`,`ProductID`);
 
 --
--- Indexes for table `isincluedproduct`
+-- Indexes for table `isincludedproduct`
 --
-ALTER TABLE `isincluedproduct`
+ALTER TABLE `isincludedproduct`
   ADD PRIMARY KEY (`OrderID`,`ProductID`);
 
 --
--- Indexes for table `isincluedrecipe`
+-- Indexes for table `isincludedrecipe`
 --
-ALTER TABLE `isincluedrecipe`
+ALTER TABLE `isincludedrecipe`
   ADD PRIMARY KEY (`RecipeName`,`CustomerID`,`OrderId`);
 
 --
