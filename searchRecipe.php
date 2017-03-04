@@ -37,11 +37,12 @@
             print "    </table>\n";
         }
     
-        $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
+        $id = filter_input(INPUT_GET, "id");
         $recipe = filter_input(INPUT_GET, "recipe");
         
         try {
-            if (empty($id)) {
+            if (!(filter_var($id, FILTER_VALIDATE_INT) === 0 || !filter_var($id, FILTER_VALIDATE_INT) === false)) { 
+            // fix bug: conflict with zero and FILTER_VALIDATE_INT
                 throw new Exception("Missing id.");
             }
             if (empty($recipe)) {
