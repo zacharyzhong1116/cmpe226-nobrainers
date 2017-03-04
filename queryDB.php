@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title>Assighment#4 NoBrainers</title>
+    <title>Assighment 4 by No Brainers</title>
 </head>
 
 <body>
@@ -44,7 +44,7 @@
                 throw new Exception("Missing id.");
             }
                 
-            print "<h1>Teacher with id $id</h1>\n";
+            print "<h1>Product with id $id</h1>\n";
         
             // Connect to the database.
             $con = new PDO("mysql:host=localhost;dbname=nobrainers",
@@ -52,7 +52,7 @@
             $con->setAttribute(PDO::ATTR_ERRMODE,
                                PDO::ERRMODE_EXCEPTION);
             
-            $query = "SELECT * FROM teacher WHERE id = :id";
+            $query = "SELECT * FROM product WHERE ProductId = :id";
             $ps = $con->prepare($query);
 
             // Fetch the matching row.
