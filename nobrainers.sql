@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 28, 2017 at 04:57 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: Mar 04, 2017 at 07:29 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -367,7 +367,7 @@ INSERT INTO `order` (`OrderID`, `CustomerID`) VALUES
 
 CREATE TABLE `product` (
   `ProductID` int(2) NOT NULL,
-  `Price` varchar(6) NOT NULL,
+  `Price` decimal(6,2) NOT NULL,
   `Name` varchar(13) NOT NULL,
   `Description` varchar(74) DEFAULT NULL,
   `Certification` varchar(11) DEFAULT NULL,
@@ -380,56 +380,56 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`ProductID`, `Price`, `Name`, `Description`, `Certification`, `CategoryID`, `FarmerID`) VALUES
-(1, '$6.62 ', 'sugar', 'libero et tristique pellentesque', 'non-gmo', 6, 3),
-(2, '$4.81 ', 'penne', 'faucibus. Morbi vehicula.', 'gluten-free', 5, 1),
-(3, '$4.81 ', 'parsley', 'vestibulum lorem', 'organic', 1, 3),
-(4, '$7.59 ', 'chicken', 'pharetra', 'gluten-free', 3, 2),
-(5, '$7.09 ', 'shrimp', 'tristique senectus et netus et malesuada fames ac', 'gluten-free', 4, 2),
-(6, '$2.43 ', 'beef', 'Aliquam nisl. Nulla eu neque pellentesque massa lobortis ultrices. Vivamus', 'gluten-free', 3, 4),
-(7, '$3.62 ', 'pasta-sauce', 'eros turpis non enim. Mauris', 'organic', 6, 4),
-(8, '$3.72 ', 'parsley', 'euismod urna. Nullam lobortis quam', 'organic', 1, 2),
-(9, '$4.15 ', 'romain-hearts', 'erat. Vivamus nisi. Mauris', 'non-gmo', 1, 4),
-(10, '$5.31 ', 'pasta-sauce', 'vel', 'gluten-free', 6, 3),
-(11, '$5.33 ', 'pork', 'nulla magna', 'gluten-free', 3, 2),
-(12, '$7.10 ', 'pork', 'Vestibulum ut eros non enim commodo hendrerit. Donec porttitor tellus', 'gluten-free', 3, 3),
-(13, '$2.17 ', 'soy-milk', 'magnis', 'organic', 7, 2),
-(14, '$4.06 ', 'sugar', 'et', 'gluten-free', 6, 1),
-(15, '$3.93 ', 'strawberry', 'libero lacus', 'organic', 2, 3),
-(16, '$4.38 ', 'pasta-sauce', 'aptent taciti sociosqu ad litora torquent per conubia', 'non-gmo', 6, 4),
-(17, '$1.00 ', 'sugar', 'ornare', 'non-gmo', 6, 3),
-(18, '$1.67 ', 'pepper', 'mi enim', 'gluten-free', 6, 4),
-(19, '$3.91 ', 'tomato', 'malesuada', 'gluten-free', 1, 1),
-(20, '$8.14 ', 'shrimp', 'eget', 'gluten-free', 4, 2),
-(21, '$3.22 ', 'salt', 'luctus', 'non-gmo', 6, 3),
-(22, '$2.90 ', 'sugar', 'enim nec tempus', 'gluten-free', 6, 3),
-(23, '$6.89 ', 'pasta-sauce', 'feugiat. Lorem ipsum dolor sit amet', 'non-gmo', 6, 4),
-(24, '$9.99 ', 'romain-hearts', 'massa non', 'non-gmo', 1, 3),
-(25, '$8.12 ', 'cherry', 'libero. Proin mi. Aliquam gravida', 'organic', 2, 5),
-(26, '$1.20 ', 'chicken', 'non', 'organic', 3, 1),
-(27, '$3.42 ', 'beef', 'rutrum. Fusce dolor quam', 'gluten-free', 3, 1),
-(28, '$1.21 ', 'tomato', 'vulputate', 'non-gmo', 2, 1),
-(29, '$1.43 ', 'penne', 'mauris sapien', 'organic', 5, 1),
-(30, '$7.36 ', 'penne', 'torquent per conubia nostra', 'organic', 5, 5),
-(31, '$4.17 ', 'parsley', 'non', 'gluten-free', 1, 1),
-(32, '$1.68 ', 'pasta-sauce', 'consequat', 'non-gmo', 6, 1),
-(33, '$7.71 ', 'pork', 'Duis elementum', 'organic', 3, 2),
-(34, '$9.08 ', 'halibut', 'imperdiet nec', 'non-gmo', 4, 5),
-(35, '$9.75 ', 'lobster', 'nascetur ridiculus mus.', 'gluten-free', 4, 2),
-(36, '$3.46 ', 'salt', 'in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum', 'non-gmo', 6, 2),
-(37, '$5.00 ', 'tomato', 'viverra. Maecenas iaculis aliquet diam. Sed diam lorem', 'non-gmo', 1, 4),
-(38, '$5.83 ', 'lobster', 'orci quis lectus. Nullam suscipit', 'gluten-free', 4, 4),
-(39, '$2.58 ', 'lobster', 'dui. Fusce aliquam', 'gluten-free', 4, 3),
-(40, '$3.18 ', 'parsley', 'sodales at', 'non-gmo', 1, 4),
-(41, '$6.32 ', 'milk', 'augue ac ipsum. Phasellus vitae mauris', 'gluten-free', 7, 1),
-(42, '$9.66 ', 'halibut', 'faucibus orci luctus et ultrices posuere cubilia', 'organic', 4, 4),
-(43, '$2.47 ', 'chicken', 'egestas nunc sed libero. Proin sed turpis nec mauris blandit', 'organic', 3, 3),
-(44, '$4.67 ', 'blueberry', 'id magna et', 'gluten-free', 2, 3),
-(45, '$1.75 ', 'shrimp', 'justo faucibus lectus', 'organic', 4, 3),
-(46, '$9.68 ', 'pasta-sauce', 'ut aliquam iaculis', 'gluten-free', 6, 4),
-(47, '$9.13 ', 'soy-milk', 'eleifend egestas. Sed pharetra', 'non-gmo', 7, 2),
-(48, '$7.63 ', 'penne', 'dapibus ligula. Aliquam erat volutpat. Nulla', 'organic', 5, 1),
-(49, '$3.54 ', 'beef', 'et magnis dis', 'gluten-free', 3, 3),
-(50, '$2.99 ', 'strawberry', 'felis orci', 'organic', 2, 1);
+(1, '6.62', 'sugar', 'libero et tristique pellentesque', 'non-gmo', 6, 3),
+(2, '4.81', 'penne', 'faucibus. Morbi vehicula.', 'gluten-free', 5, 1),
+(3, '4.81', 'parsley', 'vestibulum lorem', 'organic', 1, 3),
+(4, '7.59', 'chicken', 'pharetra', 'gluten-free', 3, 2),
+(5, '7.09', 'shrimp', 'tristique senectus et netus et malesuada fames ac', 'gluten-free', 4, 2),
+(6, '2.43', 'beef', 'Aliquam nisl. Nulla eu neque pellentesque massa lobortis ultrices. Vivamus', 'gluten-free', 3, 4),
+(7, '3.62', 'pasta-sauce', 'eros turpis non enim. Mauris', 'organic', 6, 4),
+(8, '3.72', 'parsley', 'euismod urna. Nullam lobortis quam', 'organic', 1, 2),
+(9, '4.15', 'romain-hearts', 'erat. Vivamus nisi. Mauris', 'non-gmo', 1, 4),
+(10, '5.31', 'pasta-sauce', 'vel', 'gluten-free', 6, 3),
+(11, '5.33', 'pork', 'nulla magna', 'gluten-free', 3, 2),
+(12, '7.10', 'pork', 'Vestibulum ut eros non enim commodo hendrerit. Donec porttitor tellus', 'gluten-free', 3, 3),
+(13, '2.17', 'soy-milk', 'magnis', 'organic', 7, 2),
+(14, '4.06', 'sugar', 'et', 'gluten-free', 6, 1),
+(15, '3.93', 'strawberry', 'libero lacus', 'organic', 2, 3),
+(16, '4.38', 'pasta-sauce', 'aptent taciti sociosqu ad litora torquent per conubia', 'non-gmo', 6, 4),
+(17, '1.00', 'sugar', 'ornare', 'non-gmo', 6, 3),
+(18, '1.67', 'pepper', 'mi enim', 'gluten-free', 6, 4),
+(19, '3.91', 'tomato', 'malesuada', 'gluten-free', 1, 1),
+(20, '8.14', 'shrimp', 'eget', 'gluten-free', 4, 2),
+(21, '3.22', 'salt', 'luctus', 'non-gmo', 6, 3),
+(22, '2.90', 'sugar', 'enim nec tempus', 'gluten-free', 6, 3),
+(23, '6.89', 'pasta-sauce', 'feugiat. Lorem ipsum dolor sit amet', 'non-gmo', 6, 4),
+(24, '9.99', 'romain-hearts', 'massa non', 'non-gmo', 1, 3),
+(25, '8.12', 'cherry', 'libero. Proin mi. Aliquam gravida', 'organic', 2, 5),
+(26, '1.20', 'chicken', 'non', 'organic', 3, 1),
+(27, '3.42', 'beef', 'rutrum. Fusce dolor quam', 'gluten-free', 3, 1),
+(28, '1.21', 'tomato', 'vulputate', 'non-gmo', 2, 1),
+(29, '1.43', 'penne', 'mauris sapien', 'organic', 5, 1),
+(30, '7.36', 'penne', 'torquent per conubia nostra', 'organic', 5, 5),
+(31, '4.17', 'parsley', 'non', 'gluten-free', 1, 1),
+(32, '1.68', 'pasta-sauce', 'consequat', 'non-gmo', 6, 1),
+(33, '7.71', 'pork', 'Duis elementum', 'organic', 3, 2),
+(34, '9.08', 'halibut', 'imperdiet nec', 'non-gmo', 4, 5),
+(35, '9.75', 'lobster', 'nascetur ridiculus mus.', 'gluten-free', 4, 2),
+(36, '3.46', 'salt', 'in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum', 'non-gmo', 6, 2),
+(37, '5.00', 'tomato', 'viverra. Maecenas iaculis aliquet diam. Sed diam lorem', 'non-gmo', 1, 4),
+(38, '5.83', 'lobster', 'orci quis lectus. Nullam suscipit', 'gluten-free', 4, 4),
+(39, '2.58', 'lobster', 'dui. Fusce aliquam', 'gluten-free', 4, 3),
+(40, '3.18', 'parsley', 'sodales at', 'non-gmo', 1, 4),
+(41, '6.32', 'milk', 'augue ac ipsum. Phasellus vitae mauris', 'gluten-free', 7, 1),
+(42, '9.66', 'halibut', 'faucibus orci luctus et ultrices posuere cubilia', 'organic', 4, 4),
+(43, '2.47', 'chicken', 'egestas nunc sed libero. Proin sed turpis nec mauris blandit', 'organic', 3, 3),
+(44, '4.67', 'blueberry', 'id magna et', 'gluten-free', 2, 3),
+(45, '1.75', 'shrimp', 'justo faucibus lectus', 'organic', 4, 3),
+(46, '9.68', 'pasta-sauce', 'ut aliquam iaculis', 'gluten-free', 6, 4),
+(47, '9.13', 'soy-milk', 'eleifend egestas. Sed pharetra', 'non-gmo', 7, 2),
+(48, '7.63', 'penne', 'dapibus ligula. Aliquam erat volutpat. Nulla', 'organic', 5, 1),
+(49, '3.54', 'beef', 'et magnis dis', 'gluten-free', 3, 3),
+(50, '2.99', 'strawberry', 'felis orci', 'organic', 2, 1);
 
 -- --------------------------------------------------------
 
